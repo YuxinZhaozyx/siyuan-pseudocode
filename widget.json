@@ -1,30 +1,29 @@
 {
-  "name": "widget-sample",
-  "author": "Vanessa",
-  "url": "https://github.com/siyuan-note/widget-sample",
-  "version": "0.0.3",
+  "name": "siyuan-latex-pseudocode",
+  "author": "Yuxin Zhao",
+  "url": "https://github.com/YuxinZhaozyx/siyuan-latex-pseudocode",
+  "version": "0.1.0",
   "minAppVersion": "2.8.8",
   "displayName": {
-    "default": "Widget Sample",
-    "zh_CN": "挂件示例"
+    "default": "LaTeX Pseudocode",
+    "zh_CN": "LaTeX伪代码"
   },
   "description": {
-    "default": "This is a widget sample",
-    "zh_CN": "这是一个挂件示例"
+    "default": "Elegantly Writing and Displaying Pseudocode in SiYuan",
+    "zh_CN": "在思源笔记中优雅地书写和展示伪代码"
   },
   "readme": {
-    "default": "README.md",
-    "zh_CN": "README_zh_CN.md"
+    "default": "README.md"
   },
   "funding": {
     "openCollective": "",
     "patreon": "",
-    "github": "",
+    "github": "YuxinZhaozyx",
     "custom": [
       "https://ld246.com/sponsor"
     ]
   },
   "keywords": [
-    "sample", "示例"
+    "LaTeX", "伪代码"
   ]
 }
