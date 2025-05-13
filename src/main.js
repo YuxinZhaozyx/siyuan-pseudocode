@@ -43,7 +43,7 @@ async function display(show_error_message=true) {
     document.getElementById('pseudocode-container').replaceChildren(pseudocode_element)
     const render_options = {
         indentSize: '1.2em',
-        commentDelimiter: '%',
+        commentDelimiter: '//',
         lineNumber: document.getElementById('line-number').value == 'true',
         lineNumberPunc: ':',
         noEnd: document.getElementById('block-ending').value == 'false',

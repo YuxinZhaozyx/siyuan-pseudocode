@@ -2,7 +2,7 @@
   "name": "siyuan-latex-pseudocode",
   "author": "Yuxin Zhao",
   "url": "https://github.com/YuxinZhaozyx/siyuan-latex-pseudocode",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "minAppVersion": "2.8.8",
   "displayName": {
     "default": "LaTeX Pseudocode",
