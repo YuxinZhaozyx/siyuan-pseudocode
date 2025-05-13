@@ -12,7 +12,7 @@ async function postFetch(url, data) {
 
 function getCurrentBlockId() {
     try {
-        return window.frameElement.parentElement.parentElement.dataset.nodeId;
+        return window.frameElement.parentElement.parentElement.getAttribute("data-node-id");
     } catch (err) {
         console.warn("getCurrentBlockId失效");
         return null;

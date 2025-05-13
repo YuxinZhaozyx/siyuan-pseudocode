@@ -1,6 +1,8 @@
-# siyuan-latex-pseudocode
+# siyuan-pseudocode
 
 一款让你在思源笔记中优雅地书写和展示伪代码的挂件。
+
+> 思源笔记伪代码挂件(siyuan-pseudocode)最初由[samonysh](https://github.com/samonysh/)开发，之后与本人开发的siyuan-latex-pseudocode挂件合并，重新改名为siyuan-pseudocode。感谢sanmoysh的支持。
 
 ## 使用效果
 
@@ -25,6 +27,9 @@
 
 ## 更新日志
 
++ v0.2.2
+    + 接过[samonysh](https://github.com/samonysh/)的接力棒，插件更名为siyuan-pseudocode
+    + 修改获取块id的接口
 + v0.2.1
     + 将注释的显示符号从 `%` 改为 `//`
 + v0.2.0
