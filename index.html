@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="libs/pseudocode/pseudocode.min.css">
 
     <style>
+        body {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
         #edit-panel {
-            height: 300px;
             display: flex;
             flex-direction: column;
         }
@@ -18,17 +21,23 @@
             display: none;
         }
         #editor-container {
-            width: 100%;
-            flex-grow: 1;
-            border: 1px solid grey;
+            position: absolute;
+            top: 0;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            border: 1px solid gray;
         }
         #pseudocode-container {
             width: 100%;
         }
         #status-bar {
-            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
             height: 20px;
-            border: 1px solid grey;
+            border: 1px solid gray;
             display: flex;
             justify-content: space-between; /* 左右子元素贴边 */
             align-items: center;             /* 垂直居中 */
