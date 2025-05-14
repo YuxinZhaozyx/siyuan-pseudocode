@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}  # 精确检出当前Release的Tag
 
       - name: Create ZIP Archive
         run: |
@@ -18,8 +20,11 @@ jobs:
           zip -r package.zip * -x ".git/*" ".github/*" ".gitignore" "LICENSE"
 
       - name: Upload ZIP as Release Asset
-        uses: softprops/action-upload-release-asset@v2
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          upload_url: ${{ github.event.release.upload_url }}
           asset-path: ${{ github.workspace }}/package.zip
           asset-name: package.zip
           asset-content-type: application/zip
