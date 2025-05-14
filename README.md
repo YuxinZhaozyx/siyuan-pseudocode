@@ -2,7 +2,7 @@
 
 一款让你在思源笔记中优雅地书写和展示伪代码的挂件。
 
-> 思源笔记伪代码挂件(siyuan-pseudocode)最初由[samonysh](https://github.com/samonysh/)开发，之后与本人开发的siyuan-latex-pseudocode挂件合并，重新改名为siyuan-pseudocode。感谢sanmoysh的支持。
+> 思源笔记伪代码挂件(siyuan-pseudocode)最初由[Samon Yu (samonysh)](https://github.com/samonysh/)开发，之后与本人开发的siyuan-latex-pseudocode挂件合并，重新改名为siyuan-pseudocode。感谢Samon Yu的贡献。
 
 ## 使用效果
 
@@ -27,8 +27,10 @@
 
 ## 更新日志
 
++ v0.2.3
+    + 增加算法编号设置功能
 + v0.2.2
-    + 接过[samonysh](https://github.com/samonysh/)的接力棒，插件更名为siyuan-pseudocode
+    + 接过[Samon Yu](https://github.com/samonysh/)的接力棒，插件更名为siyuan-pseudocode
     + 修改获取块id的接口
 + v0.2.1
     + 将注释的显示符号从 `%` 改为 `//`

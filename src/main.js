@@ -18,6 +18,9 @@ async function load() {
     if (attrs['custom-title-prefix']) {
         document.getElementById('title-prefix').value = attrs['custom-title-prefix'];
     }
+    if (attrs['custom-caption-count']) {
+        document.getElementById('caption-count').value = attrs['custom-caption-count'];
+    }
 }
 
 async function save() {
@@ -27,6 +30,7 @@ async function save() {
     attrs['custom-block-ending'] = document.getElementById('block-ending').value;
     attrs['custom-scope-line'] = document.getElementById('scope-line').value;
     attrs['custom-title-prefix'] = document.getElementById('title-prefix').value;
+    attrs['custom-caption-count'] = document.getElementById('caption-count').value;
 
     setBlockAttrsAPI(attrs);
 }
@@ -49,6 +53,7 @@ async function display(show_error_message=true) {
         noEnd: document.getElementById('block-ending').value == 'false',
         scopeLines: document.getElementById('scope-line').value == 'true',
         titlePrefix: document.getElementById('title-prefix').value,
+        captionCount: (document.getElementById('caption-count').value == '' ? undefined : document.getElementById('caption-count').value - 1),
     }
     try {
         if (pseudocode_element.textContent.trim().length == 0) {
