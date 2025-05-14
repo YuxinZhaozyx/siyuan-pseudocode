@@ -1,0 +1,25 @@
+name: Package on Release
+
+on:
+  release:
+    types: [published, prereleased]  # 当发布一个新版本时触发
+
+jobs:
+  package-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create ZIP Archive
+        run: |
+          cd ${{ github.workspace }}
+          zip -r package.zip * -x ".git/*" ".github/*" ".gitignore" "LICENSE"
+
+      - name: Upload ZIP as Release Asset
+        uses: softprops/action-upload-release-asset@v2
+        with:
+          asset-path: ${{ github.workspace }}/package.zip
+          asset-name: package.zip
+          asset-content-type: application/zip

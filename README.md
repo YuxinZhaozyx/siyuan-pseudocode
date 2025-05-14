@@ -8,11 +8,11 @@
 
 **编辑模式：**
 
-![](https://github.com/user-attachments/assets/1e802997-4799-44e5-aee8-0848564a8dd9)
+![](https://b3logfile.com/file/2025/05/image-9AkQwm0.png)
 
 **显示模式：**
 
-![](https://github.com/user-attachments/assets/1fdcfd68-08a2-4294-a562-b60027a79c4e)
+![](https://b3logfile.com/file/2025/05/image-cR6oUjq.png)
 
 ## 功能特征
 
@@ -27,6 +27,9 @@
 
 ## 更新日志
 
++ v0.2.4
+    + 新版本发布时自动打包
+    + 修复README图片在集市中的显示
 + v0.2.3
     + 增加算法编号设置功能
 + v0.2.2
