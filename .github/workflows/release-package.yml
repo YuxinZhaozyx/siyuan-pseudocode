@@ -25,6 +25,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset-path: ${{ github.workspace }}/package.zip
-          asset-name: package.zip
-          asset-content-type: application/zip
+          asset_path: ${{ github.workspace }}/package.zip
+          asset_name: package.zip
+          asset_content_type: application/zip
