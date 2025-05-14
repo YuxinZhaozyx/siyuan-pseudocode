@@ -2,14 +2,13 @@ name: Package on Release
 
 on:
   release:
-    types: [published, prereleased]  # 当发布一个新版本时触发
+    types: [published]  # 当发布一个新版本时触发
 
 jobs:
   package-release:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      packages: write
+      contents: write
 
     steps:
       - name: Checkout code
