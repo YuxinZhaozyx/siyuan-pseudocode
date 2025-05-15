@@ -35,13 +35,30 @@ async function save() {
     setBlockAttrsAPI(attrs);
 }
 
-function showPanel(panel){
+function showPanel(panel) {
     for (const panel_name of ['edit-panel', 'display-panel']) {
         document.getElementById(panel_name).style.display = (panel_name == panel ? 'flex' : 'none');
     }
 }
 
-async function display(show_error_message=true) {
+function getAutoCaptionCount() {
+    try {
+        let count = 0;
+        let block = window.frameElement.parentElement.parentElement;
+        while (block.previousElementSibling) {
+            block = block.previousElementSibling;
+            if (block.getAttribute('data-subtype') == 'widget' && block.querySelector('iframe').getAttribute('src') == '/widgets/siyuan-pseudocode/') {
+                count++;
+            }
+        }
+        return count;
+    } catch (err) {
+        console.warn("getAutoCaptionCount 失效");
+    }
+    return undefined;
+}
+
+async function display(show_error_message = true) {
     const pseudocode_element = document.createElement('pre');
     pseudocode_element.textContent = await editor.getValue();
     document.getElementById('pseudocode-container').replaceChildren(pseudocode_element)
@@ -53,7 +70,7 @@ async function display(show_error_message=true) {
         noEnd: document.getElementById('block-ending').value == 'false',
         scopeLines: document.getElementById('scope-line').value == 'true',
         titlePrefix: document.getElementById('title-prefix').value,
-        captionCount: (document.getElementById('caption-count').value == '' ? undefined : document.getElementById('caption-count').value - 1),
+        captionCount: (document.getElementById('caption-count').value == '' ? getAutoCaptionCount() : document.getElementById('caption-count').value - 1),
     }
     try {
         if (pseudocode_element.textContent.trim().length == 0) {
