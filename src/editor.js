@@ -81,6 +81,8 @@ require(['vs/editor/editor.main'], function () {
                         // Blocks
                         createSnippet('\\begin', '\\begin{${1:env}}\n\t$0\n\\end{${1:env}}'),
                         createSnippet('\\caption', '\\caption{${1:<text>}}'),
+                        createSnippet('\\begin{algorithm}', '\\begin{algorithm}\n\t$0\n\\end{algorithm}'),
+                        createSnippet('\\begin{algorithmic}', '\\begin{algorithmic}\n\t$0\n\\end{algorithmic}'),
 
                         // Inputs & Outputs
                         createSnippet('\\REQUIRE', '\\REQUIRE ${1:<text>}'),
