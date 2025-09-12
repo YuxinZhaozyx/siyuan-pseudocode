@@ -1,10 +1,18 @@
 import * as editor from './editor.js'
 import { getBlockAttrsAPI, setBlockAttrsAPI } from './api.js';
 
-async function load() {
+window.frameElement.style = 'border: 0;';
+
+let latex_code_loaded = '';
+async function load(no_editor_mode = false) {
     const attrs = await getBlockAttrsAPI();
-    if (attrs['custom-latex-code']) {
-        editor.setValue(attrs['custom-latex-code']);
+    if (!attrs['custom-latex-code']) {
+        attrs['custom-latex-code'] = '';
+    }
+    if (no_editor_mode) {
+        latex_code_loaded = attrs['custom-latex-code'];
+    } else {
+        await editor.setValue(attrs['custom-latex-code']);
     }
     if (attrs['custom-line-number']) {
         document.getElementById('line-number').value = attrs['custom-line-number'];
@@ -35,9 +43,14 @@ async function save() {
     setBlockAttrsAPI(attrs);
 }
 
-function showPanel(panel) {
+let editor_loaded = false;
+async function showPanel(panel) {
     for (const panel_name of ['edit-panel', 'display-panel']) {
         document.getElementById(panel_name).style.display = (panel_name == panel ? 'flex' : 'none');
+    }
+    if (panel == 'edit-panel' && !editor_loaded) {
+        editor_loaded = true;
+        await load();
     }
 }
 
@@ -58,9 +71,9 @@ function getAutoCaptionCount() {
     return undefined;
 }
 
-async function display(show_error_message = true) {
+async function display(show_error_message = true, no_editor_mode = false) {
     const pseudocode_element = document.createElement('pre');
-    pseudocode_element.textContent = await editor.getValue();
+    pseudocode_element.textContent = no_editor_mode ? latex_code_loaded : await editor.getValue();
     document.getElementById('pseudocode-container').replaceChildren(pseudocode_element)
     const render_options = {
         indentSize: '1.2em',
@@ -82,14 +95,18 @@ async function display(show_error_message = true) {
             document.getElementById("error-message").innerText = error.message;
             document.getElementById("error-modal").style.display = "block";
         }
-        return;
+        return false;
     }
     showPanel('display-panel');
+    return true;
 }
 
 window.onload = async function () {
-    await load();
-    await display(false);
+    await load(true);
+    const success_display = await display(false, true);
+    if (!success_display) {
+        await showPanel('edit-panel');
+    }
 }
 
 document.getElementById('display').onclick = async function () {
