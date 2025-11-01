@@ -1,8 +1,6 @@
 import * as editor from './editor.js'
 import { getBlockAttrsAPI, setBlockAttrsAPI } from './api.js';
 
-window.frameElement.style = 'border: 0;';
-
 let latex_code_loaded = '';
 async function load(no_editor_mode = false) {
     const attrs = await getBlockAttrsAPI();
