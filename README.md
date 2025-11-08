@@ -1,5 +1,7 @@
 # siyuan-pseudocode
 
+> 现已升级为伪代码插件(siyuan-embed-pseudocode)，提供更强的跨平台能力，现有挂件用户无需担心迁移问题，安装伪代码插件后可将原伪代码挂件块转换为伪代码插件新格式
+
 一款让你在思源笔记中优雅地书写和展示伪代码的挂件。
 
 > 思源笔记伪代码挂件(siyuan-pseudocode)最初由[Samon Yu (samonysh)](https://github.com/samonysh/)开发，之后与本人开发的siyuan-latex-pseudocode挂件合并，重新改名为siyuan-pseudocode。感谢Samon Yu的贡献。
@@ -27,6 +29,8 @@
 
 ## 更新日志
 
++ v0.4.2
+    + 发布插件版本
 + v0.4.1
     + 修复挂件大小调整后失效的问题
 + v0.4.0
